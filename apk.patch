@@ -1,0 +1,22 @@
+From 3325b0c2b701e6fb83b258333958871de15d4d56 Mon Sep 17 00:00:00 2001
+From: Aryan Sinha <sinha.aryan03@gmail.com>
+Date: Sat, 22 May 2021 21:14:34 +0530
+Subject: [PATCH] Build: Allow Copying Prebuilt Apk
+
+---
+ core/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/core/Makefile b/core/Makefile
+index 4a7c84cf12..f50afc63e3 100644
+--- a/core/Makefile
++++ b/core/Makefile
+@@ -15,7 +15,7 @@ LOCAL_PATH := $(BUILD_SYSTEM)
+ #$(2): the dest
+ define check-product-copy-files
+ $(if $(filter-out $(TARGET_COPY_OUT_SYSTEM_OTHER)/%,$(2)), \
+-  $(if $(filter %.apk, $(2)),$(error \
++  $(if $(filter %.abc, $(2)),$(error \
+      Prebuilt apk found in PRODUCT_COPY_FILES: $(1), use BUILD_PREBUILT instead!))) \
+ $(if $(filter true,$(BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES)),, \
+   $(if $(filter $(TARGET_COPY_OUT_SYSTEM)/etc/vintf/% \
