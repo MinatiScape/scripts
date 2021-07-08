@@ -1,6 +1,12 @@
 #!/bin/bash
 # 
 echo "========================================"
+echo "      Settings git configs    "
+echo "========================================"
+git config --global user.name "techyminati"
+git config --global user.email "sinha.aryan03@gmail.com"
+
+echo "========================================"
 echo "      CipherOS AOSP Tag Merge Script    "
 echo "========================================"
 
